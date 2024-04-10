@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
+import Home from "./Containers/Home";
 
 function App() {
-  return <Box>Hello</Box>;
+  return <Home />;
 }
 
 export default App;
