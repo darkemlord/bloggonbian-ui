@@ -11,8 +11,7 @@ declare module "@mui/material/styles" {
       background: string;
     };
     fontStyles: {
-      luxuriousRoman: string;
-      marcellus: string;
+      marcellusSC: string;
     };
     status: {
       danger: string;
@@ -31,8 +30,7 @@ declare module "@mui/material/styles" {
       background?: string;
     };
     fontStyles?: {
-      luxuriousRoman?: string;
-      marcellus?: string;
+      marcellusSC: string;
     };
     status?: {
       danger?: string;

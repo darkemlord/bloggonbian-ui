@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import {
+  BannerText,
   BannerTextContainer,
   bannerContainer,
   bannerSectionImage,
@@ -14,7 +15,10 @@ const HomeContainer: React.FC = () => {
       <Box sx={imageContainer}>
         <Box sx={bannerSectionImage} component="img" src={homeBackground}></Box>
         <Box sx={BannerTextContainer}>
-          <Typography>Hello Amigos</Typography>
+          <Typography sx={BannerText}>
+            Exploring Horizons: Ideas, Innovation, and Inspiration for the
+            Modern World. Welcome to our space for discovery and dialogue!
+          </Typography>
         </Box>
       </Box>
     </Box>

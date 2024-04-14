@@ -1,10 +1,12 @@
 import { SxProps } from "@mui/material";
+import bannerBackground from "../../assets/images/png/home_banner_background_2.png";
+import theme from "../../styles/theme";
 
 export const bannerContainer: SxProps = {
   width: "100%",
   height: "100vh",
   display: "flex",
-  background: "#C4C4C4",
+  background: `url(${bannerBackground})`,
   justifyContent: "center",
   alignItems: "center",
 };
@@ -35,5 +37,7 @@ export const BannerTextContainer: SxProps = {
   alignItems: "center",
 };
 export const BannerText: SxProps = {
-  zIndex: 2,
+  fontFamily: theme.fontStyles.marcellusSC,
+  fontSize: 60,
+  textAlign: "center",
 };

@@ -12,6 +12,11 @@
   margin: 0 !important;
 }
 
+@font-face {
+  font-family: "Marcellus SC";
+  src: url("./assets/fonts/MarcellusSC-Regular.ttf") format("truetype");
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
