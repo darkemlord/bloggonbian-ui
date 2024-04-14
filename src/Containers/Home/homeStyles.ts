@@ -17,9 +17,23 @@ export const imageContainer: SxProps = {
 };
 
 export const bannerSectionImage: SxProps = {
+  zIndex: 0,
   position: "absolute",
   width: "100%",
   height: "100%",
   objectFit: "cover",
-  animation: "rotate 180s linear infinite",
+  animation: "rotate 360s linear infinite",
+};
+
+export const BannerTextContainer: SxProps = {
+  position: "absolute",
+  zIndex: 1,
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+export const BannerText: SxProps = {
+  zIndex: 2,
 };
