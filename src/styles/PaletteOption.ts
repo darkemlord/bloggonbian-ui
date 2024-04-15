@@ -15,6 +15,7 @@ declare module "@mui/material/styles" {
     };
     fontStyles: {
       marcellusSC: string;
+      libreBodoni: string;
     };
     status: {
       danger: string;
@@ -36,7 +37,8 @@ declare module "@mui/material/styles" {
       blueOpacity?: string;
     };
     fontStyles?: {
-      marcellusSC: string;
+      marcellusSC?: string;
+      libreBodoni?: string;
     };
     status?: {
       danger?: string;

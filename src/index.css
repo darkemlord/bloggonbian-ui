@@ -17,6 +17,12 @@
   src: url("./assets/fonts/MarcellusSC-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Libre Bodoni";
+  src: url("./assets/fonts/LibreBodoni-VariableFont_wght.ttf")
+    format("truetype");
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);

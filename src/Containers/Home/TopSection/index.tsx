@@ -6,8 +6,8 @@ import { mainContainer } from "./topSectionStyles";
 const TopSection: React.FC = () => {
   return (
     <Box sx={mainContainer}>
-      <MainButton sx={{ zIndex: 1 }} variant="contained">
-        Hello
+      <MainButton sx={{ textTransform: "none" }} variant="contained">
+        Login
       </MainButton>
     </Box>
   );
