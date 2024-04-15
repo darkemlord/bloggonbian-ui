@@ -5,6 +5,8 @@
       "@containers/*": ["./src/containers/*"],
       "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@root/*": ["./src/*"]
     }
   }
