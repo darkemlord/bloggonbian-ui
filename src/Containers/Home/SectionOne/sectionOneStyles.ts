@@ -1,6 +1,6 @@
 import { SxProps } from "@mui/material";
 import bannerBackground from "@assets/images/png/home_banner_background_2.png";
-import theme from "../../styles/theme";
+import theme from "../../../styles/theme";
 
 export const bannerContainer: SxProps = {
   width: "100%",
@@ -49,7 +49,6 @@ export const bannerTextBackground: SxProps = {
 
 export const BannerText: SxProps = {
   fontFamily: theme.fontStyles.marcellusSC,
-  fontSize: 50,
   textAlign: "center",
   [theme.breakpoints.down("md")]: {
     fontSize: 35,
@@ -57,7 +56,10 @@ export const BannerText: SxProps = {
   [theme.breakpoints.down("sm")]: {
     fontSize: 20,
   },
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.up("xs")]: {
     fontSize: 15,
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: 50,
   },
 };

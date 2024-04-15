@@ -7,7 +7,7 @@ import {
   bannerTextContainer,
   bannerTextBackground,
   BannerText,
-} from "../homeStyles";
+} from "./sectionOneStyles";
 import homeBackground from "@assets/images/png/banner-circle-image.png";
 
 const SectionOne: React.FC = () => {
