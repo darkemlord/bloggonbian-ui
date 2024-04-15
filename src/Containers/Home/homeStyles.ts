@@ -1,5 +1,5 @@
 import { SxProps } from "@mui/material";
-import bannerBackground from "../../assets/images/png/home_banner_background_2.png";
+import bannerBackground from "@assets/images/png/home_banner_background_2.png";
 import theme from "../../styles/theme";
 
 export const bannerContainer: SxProps = {
