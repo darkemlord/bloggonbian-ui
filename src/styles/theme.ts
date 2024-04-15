@@ -15,6 +15,7 @@ const theme = createTheme({
   },
   opacityColors: {
     background: "rgba(0, 0, 0, 0.62)",
+    greyOpacity: "rgba(15, 15, 16, 0.5)",
   },
   fontStyles: {
     marcellusSC: "Marcellus SC",

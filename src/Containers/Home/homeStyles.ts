@@ -25,9 +25,13 @@ export const bannerSectionImage: SxProps = {
   height: "100%",
   objectFit: "cover",
   animation: "rotate 360s linear infinite",
+  [theme.breakpoints.down("sm")]: {
+    scale: "2",
+    objectFit: "contain",
+  },
 };
 
-export const BannerTextContainer: SxProps = {
+export const bannerTextContainer: SxProps = {
   position: "absolute",
   zIndex: 1,
   width: "100%",
@@ -36,8 +40,24 @@ export const BannerTextContainer: SxProps = {
   justifyContent: "center",
   alignItems: "center",
 };
+
+export const bannerTextBackground: SxProps = {
+  padding: theme.spacing(2, 8),
+  borderRadius: "10px",
+  background: theme.opacityColors.greyOpacity,
+};
+
 export const BannerText: SxProps = {
   fontFamily: theme.fontStyles.marcellusSC,
-  fontSize: 60,
+  fontSize: 50,
   textAlign: "center",
+  [theme.breakpoints.down("md")]: {
+    fontSize: 35,
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: 20,
+  },
+  [theme.breakpoints.down("xs")]: {
+    fontSize: 15,
+  },
 };
