@@ -16,6 +16,7 @@ declare module "@mui/material/styles" {
     fontStyles: {
       marcellusSC: string;
       libreBodoni: string;
+      lavishly: string;
     };
     status: {
       danger: string;
@@ -39,6 +40,7 @@ declare module "@mui/material/styles" {
     fontStyles?: {
       marcellusSC?: string;
       libreBodoni?: string;
+      lavishly?: string;
     };
     status?: {
       danger?: string;

@@ -33,6 +33,8 @@ const MainButtonStyle = styled(Button)(() => ({
     },
   },
   "&.MuiButton-outlined": {
+    color: theme.customColors.text,
+    border: `2px solid ${theme.opacityColors.redOpacity}`,
     borderRadius: 10,
     fontSize: 18,
     fontFamily: theme.fontStyles.libreBodoni,

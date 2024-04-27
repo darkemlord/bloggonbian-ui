@@ -22,6 +22,7 @@ const theme = createTheme({
   fontStyles: {
     marcellusSC: "Marcellus SC",
     libreBodoni: "Libre Bodoni",
+    lavishly: "Lavishly Yours",
   },
   status: {
     danger: "red",

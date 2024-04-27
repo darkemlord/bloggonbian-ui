@@ -23,6 +23,11 @@
     format("truetype");
 }
 
+@font-face {
+  font-family: "Lavishly Yours";
+  src: url("./assets/fonts/LavishlyYours-Regular.ttf") format("truetype");
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
