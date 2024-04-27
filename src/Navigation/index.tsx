@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
       element: <Auth authType={AuthType.LOGIN} />,
     },
     {
-      path: "/sign_up",
+      path: BLOG_ROUTES.signUp,
       element: <Auth authType={AuthType.SIGN_UP} />,
     },
   ]);
