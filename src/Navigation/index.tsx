@@ -2,6 +2,7 @@ import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Auth from "../Containers/Auth";
 import Home from "../Containers/Home";
+import BLOG_ROUTES, { AuthType } from "@root/constants/url";
 
 const Navigation: React.FC = () => {
   const router = createBrowserRouter([
@@ -11,8 +12,12 @@ const Navigation: React.FC = () => {
       errorElement: <div>Error Page</div>,
     },
     {
-      path: "/auth",
-      element: <Auth />,
+      path: BLOG_ROUTES.login,
+      element: <Auth authType={AuthType.LOGIN} />,
+    },
+    {
+      path: "/sign_up",
+      element: <Auth authType={AuthType.SIGN_UP} />,
     },
   ]);
   return <RouterProvider router={router} />;

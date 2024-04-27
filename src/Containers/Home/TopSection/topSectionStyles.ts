@@ -6,14 +6,14 @@ export const mainContainer: SxProps = {
   height: 80,
   position: "absolute",
   display: "flex",
-  justifyContent: "space-between",
+  justifyContent: "space-around",
   zIndex: 2,
   alignItems: "center",
 };
 
 export const buttonsContainer: SxProps = {
   display: "flex",
-  gap: 1,
+  gap: 2,
 };
 
 export const logoContainer: SxProps = {
@@ -24,4 +24,7 @@ export const logoContainer: SxProps = {
 export const logo: SxProps = {
   fontSize: 50,
   fontFamily: theme.fontStyles.lavishly,
+  [theme.breakpoints.down("sm")]: {
+    fontSize: 30,
+  },
 };

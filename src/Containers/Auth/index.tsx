@@ -1,8 +1,13 @@
 import { Box } from "@mui/material";
 import React from "react";
+import { AuthType } from "@root/constants/url";
 
-const AuthContainer: React.FC = () => {
-  return <Box>AuthContainer</Box>;
+type Props = {
+  authType: AuthType;
+};
+
+const AuthContainer: React.FC<Props> = ({ authType }) => {
+  return <Box>{authType}</Box>;
 };
 
 export default AuthContainer;
