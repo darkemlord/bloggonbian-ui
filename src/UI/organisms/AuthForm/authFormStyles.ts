@@ -19,3 +19,11 @@ export const formInputsContainer: SxProps = {
   flexDirection: "column",
   gap: 4,
 };
+
+export const linksContainer: SxProps = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: 1,
+};
