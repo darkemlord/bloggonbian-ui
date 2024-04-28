@@ -12,6 +12,7 @@ declare module "@mui/material/styles" {
       greyOpacity: string;
       redOpacity: string;
       blueOpacity: string;
+      greyLightOpacity: string;
     };
     fontStyles: {
       marcellusSC: string;
@@ -36,6 +37,7 @@ declare module "@mui/material/styles" {
       greyOpacity?: string;
       redOpacity?: string;
       blueOpacity?: string;
+      greyLightOpacity: string;
     };
     fontStyles?: {
       marcellusSC?: string;
