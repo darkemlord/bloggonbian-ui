@@ -14,7 +14,7 @@ const SectionOne: React.FC = () => {
   return (
     <Box sx={bannerContainer}>
       <Box sx={imageContainer}>
-        <Box sx={bannerSectionImage} component="img" src={homeBackground}></Box>
+        <Box sx={bannerSectionImage} component="img" src={homeBackground} />
         <Box sx={bannerTextContainer}>
           <Box sx={bannerTextBackground}>
             <Typography sx={BannerText}>
