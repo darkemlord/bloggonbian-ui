@@ -1,15 +1,18 @@
 import { Box, TextField, Typography } from "@mui/material";
 import React from "react";
 import { formContainer, formInputsContainer } from "./authFormStyles";
-import { AuthType } from "@root/constants/url";
+import BLOG_ROUTES, { AuthType } from "@root/constants/url";
 import MainButton from "@root/UI/atoms/MainButton";
 import { formLogo } from "@root/Containers/Auth/authStyles";
+import { Link } from "react-router-dom";
+import theme from "@styles/theme";
 
 type Props = {
   authType: AuthType;
 };
 
 const AuthForm: React.FC<Props> = ({ authType }) => {
+  const isLoginForm = authType === AuthType.LOGIN;
   return (
     <Box component="form" sx={formContainer}>
       <Typography sx={formLogo}>Bloggonbian</Typography>
@@ -23,8 +26,16 @@ const AuthForm: React.FC<Props> = ({ authType }) => {
         />
       </Box>
       <MainButton sx={{ textTransform: "none" }} variant="contained">
-        {authType === AuthType.LOGIN ? "Login" : "Sign Up"}{" "}
+        {isLoginForm ? "Login" : "Sign Up"}
       </MainButton>
+      <Link
+        style={{ color: theme.customColors.blueDark }}
+        to={isLoginForm ? BLOG_ROUTES.signUp : BLOG_ROUTES.login}
+      >
+        {isLoginForm
+          ? "Don't have an account? Sign Up"
+          : "Already registered? Sign In"}
+      </Link>
     </Box>
   );
 };
