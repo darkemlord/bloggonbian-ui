@@ -13,6 +13,7 @@ import theme from "@styles/theme";
 
 type Props = {
   authType: AuthType;
+  onSubmit: () => void;
 };
 
 const AuthForm: React.FC<Props> = ({ authType }) => {
