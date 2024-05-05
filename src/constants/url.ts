@@ -1,11 +1,11 @@
 const BLOG_ROUTES = {
-  signUp: "/sign_up",
+  signUp: "/register",
   login: "/login",
 };
 
 export enum AuthType {
   LOGIN = "login",
-  SIGN_UP = "sign_up",
+  SIGN_UP = "register",
 }
 
 export default BLOG_ROUTES;

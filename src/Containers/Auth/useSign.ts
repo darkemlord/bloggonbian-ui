@@ -1,6 +1,6 @@
+import axiosClient from "@root/api/client";
 import { AuthRequest } from "@root/api/user";
 import BLOG_ROUTES, { AuthType } from "@root/constants/url";
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 
@@ -11,11 +11,11 @@ export const useSign = (authType: AuthType) => {
   const loginRoute =
     authType === AuthType.LOGIN ? BLOG_ROUTES.login : BLOG_ROUTES.signUp;
   const mutation = useMutation((post: AuthRequest) => {
-    return axios.post(loginRoute, post);
+    return axiosClient.post(loginRoute, post);
   });
 
   const onSubmit = (formValues: AuthRequest) => {
-    return formValues;
+    mutation.mutate(formValues);
   };
   return {
     mutation,

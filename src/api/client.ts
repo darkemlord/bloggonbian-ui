@@ -13,7 +13,7 @@ function getHeaders() {
 }
 
 const axiosClient = axios.create({
-  baseURL: import.meta.env.REACT_APP_API_URL,
+  baseURL: import.meta.env.VITE_APP_API_URL,
   headers: {
     ...getHeaders(),
     Accept: "application/json",
@@ -22,7 +22,7 @@ const axiosClient = axios.create({
 });
 
 export const axiosFileClient = axios.create({
-  baseURL: import.meta.env.REACT_APP_API_URL,
+  baseURL: import.meta.env.VITE_APP_API_URL,
   headers: {
     ...getHeaders(),
     Accept: "multipart/form-data",

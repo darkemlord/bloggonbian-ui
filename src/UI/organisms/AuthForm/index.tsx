@@ -41,6 +41,7 @@ const AuthForm: React.FC<Props> = ({ authType, method, onSubmit }) => {
         />
         <TextField
           id="filled-basic"
+          type="password"
           label="Password"
           variant="filled"
           fullWidth
