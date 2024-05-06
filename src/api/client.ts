@@ -1,4 +1,5 @@
 import axios, { AxiosRequestHeaders } from "axios";
+import Cookies from "js-cookie";
 
 function getHeaders() {
   if (typeof window === "undefined") {
@@ -6,9 +7,8 @@ function getHeaders() {
   }
 
   return {
-    Client: localStorage.getItem("client"),
-    "Access-token": localStorage.getItem("access_token"),
-    Uid: localStorage.getItem("uid"),
+    "Access-token": Cookies.get("access_token"),
+    Uid: Cookies.get("uid"),
   };
 }
 

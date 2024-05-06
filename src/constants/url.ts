@@ -1,6 +1,7 @@
 const BLOG_ROUTES = {
   signUp: "/register",
   login: "/login",
+  user: "/user",
 };
 
 export enum AuthType {
