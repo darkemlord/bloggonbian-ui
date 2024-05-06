@@ -3,5 +3,6 @@ export type ErrorType = {
     data?: {
       error: string;
     };
+    status?: number;
   };
 };

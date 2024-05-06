@@ -8,13 +8,20 @@ import Auth from "../Containers/Auth";
 import Home from "../Containers/Home";
 import BLOG_ROUTES, { AuthType } from "@root/constants/url";
 import User from "@root/Containers/User";
+import useAuth from "@hooks/useAuth";
 
 const Navigation: React.FC = () => {
+  const { currentUser, isFetching } = useAuth();
   const redirectToLogin = () => {
-    const user = false;
-    if (!user) {
-      return redirect("/");
+    if (!currentUser && !isFetching) {
+      return redirect(BLOG_ROUTES.login);
     }
+    return null;
+  };
+
+  const redirectToUser = () => {
+    console.log(currentUser);
+    if (currentUser) return redirect(BLOG_ROUTES.user);
     return null;
   };
   const router = createBrowserRouter([
@@ -25,10 +32,16 @@ const Navigation: React.FC = () => {
     },
     {
       path: BLOG_ROUTES.login,
-      element: <Auth authType={AuthType.LOGIN} />,
+      loader: redirectToUser,
+      element: currentUser ? (
+        <p>loading...</p>
+      ) : (
+        <Auth authType={AuthType.LOGIN} />
+      ),
     },
     {
       path: BLOG_ROUTES.signUp,
+      loader: redirectToUser,
       element: <Auth authType={AuthType.SIGN_UP} />,
     },
     {

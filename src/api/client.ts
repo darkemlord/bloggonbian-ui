@@ -7,8 +7,7 @@ function getHeaders() {
   }
 
   return {
-    "Access-token": Cookies.get("access_token"),
-    Uid: Cookies.get("uid"),
+    Authorization: Cookies.get("access_token"),
   };
 }
 

@@ -8,3 +8,7 @@ export type AuthResponse = {
   email: string;
   token: string;
 };
+
+export type CurrentUserResponse = {
+  email: string;
+};
