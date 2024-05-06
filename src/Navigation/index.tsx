@@ -1,11 +1,22 @@
 import React from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  redirect,
+} from "react-router-dom";
 import Auth from "../Containers/Auth";
 import Home from "../Containers/Home";
 import BLOG_ROUTES, { AuthType } from "@root/constants/url";
 import User from "@root/Containers/User";
 
 const Navigation: React.FC = () => {
+  const redirectToLogin = () => {
+    const user = false;
+    if (!user) {
+      return redirect("/");
+    }
+    return null;
+  };
   const router = createBrowserRouter([
     {
       path: "/",
@@ -22,6 +33,7 @@ const Navigation: React.FC = () => {
     },
     {
       path: BLOG_ROUTES.user,
+      loader: redirectToLogin,
       element: <User />,
     },
   ]);

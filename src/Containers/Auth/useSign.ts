@@ -17,7 +17,6 @@ export const useSign = (authType: AuthType) => {
   const mutation = useMutation((post: AuthRequest) => {
     return axiosClient.post<AuthResponse>(loginRoute, post);
   });
-
   const { data: result, isSuccess } = mutation;
   const onSubmit = (formValues: AuthRequest) => {
     mutation.mutate(formValues);
