@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AuthenticationContext from "./authContext";
 import { useQuery } from "react-query";
 import BLOG_ROUTES from "@root/constants/url";
@@ -16,21 +16,22 @@ const AuthProvider: React.FC<AuthProps> = ({ children }) => {
     CurrentUserResponse | undefined
   >(undefined);
   const currentToken = Cookies.get("access_token");
-  const { data, isFetching } = useQuery<CurrentUserResponse>(
+  const { data: response, isFetching } = useQuery(
     "currentUser",
     () => {
-      return axiosClient.get(BLOG_ROUTES.currentUser);
+      return axiosClient.get<CurrentUserResponse>(BLOG_ROUTES.currentUser);
     },
-    { enabled: !!currentToken }
+    { enabled: !!currentToken, refetchOnMount: "always" }
   );
-  const values = useMemo(() => {
-    if (data) setCurrentUser(data);
-    return {
-      currentUser,
-      setCurrentUser,
-      isFetching,
-    };
-  }, [data, currentUser]);
+  const values = {
+    currentUser,
+    setCurrentUser,
+    isFetching,
+  };
+
+  useEffect(() => {
+    if (response) setCurrentUser(response.data);
+  }, [response]);
 
   return (
     <AuthenticationContext.Provider value={values}>
