@@ -30,7 +30,7 @@ const AuthProvider: React.FC<AuthProps> = ({ children }) => {
       setCurrentUser,
       isFetching,
     };
-  }, [data]);
+  }, [data, currentUser]);
 
   return (
     <AuthenticationContext.Provider value={values}>
