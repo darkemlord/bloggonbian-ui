@@ -45,16 +45,7 @@ export const useSign = (authType: AuthType) => {
       toast.error(errorWithMessage?.response?.data?.error as string);
       reset();
     }
-  }, [
-    isSuccess,
-    result,
-    navigate,
-    isError,
-    error,
-    setCurrentUser,
-    authType,
-    reset,
-  ]);
+  }, [isSuccess, isError]);
 
   return {
     onSubmit,
