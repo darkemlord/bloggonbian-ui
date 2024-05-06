@@ -20,7 +20,6 @@ const Navigation: React.FC = () => {
   };
 
   const redirectToUser = () => {
-    console.log(currentUser);
     if (currentUser) return redirect(BLOG_ROUTES.user);
     return null;
   };
