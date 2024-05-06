@@ -37,7 +37,7 @@ const AuthForm: React.FC<Props> = ({
       <Typography sx={formLogo}>Bloggonbian</Typography>
       <Box sx={formInputsContainer}>
         <TextField
-          id="filled-basic"
+          id="email-input"
           label="Email"
           variant="filled"
           fullWidth
@@ -46,7 +46,7 @@ const AuthForm: React.FC<Props> = ({
           {...register("email", { required: "Email is required" })}
         />
         <TextField
-          id="filled-basic"
+          id="password-input"
           type="password"
           label="Password"
           variant="filled"
