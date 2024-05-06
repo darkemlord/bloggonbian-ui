@@ -17,9 +17,15 @@ type Props = {
   authType: AuthType;
   onSubmit: (formValues: AuthRequest) => void;
   method: UseFormReturn<AuthRequest>;
+  isLoading: boolean;
 };
 
-const AuthForm: React.FC<Props> = ({ authType, method, onSubmit }) => {
+const AuthForm: React.FC<Props> = ({
+  authType,
+  method,
+  onSubmit,
+  isLoading,
+}) => {
   const isLoginForm = authType === AuthType.LOGIN;
   const {
     register,
@@ -27,7 +33,7 @@ const AuthForm: React.FC<Props> = ({ authType, method, onSubmit }) => {
     formState: { errors },
   } = method;
   return (
-    <Box component="form" sx={formContainer}>
+    <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={formContainer}>
       <Typography sx={formLogo}>Bloggonbian</Typography>
       <Box sx={formInputsContainer}>
         <TextField
@@ -53,7 +59,8 @@ const AuthForm: React.FC<Props> = ({ authType, method, onSubmit }) => {
       <MainButton
         sx={{ textTransform: "none" }}
         variant="contained"
-        onClick={handleSubmit(onSubmit)}
+        disabled={isLoading}
+        type="submit"
       >
         {isLoginForm ? "Login" : "Sign Up"}
       </MainButton>

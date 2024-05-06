@@ -2,6 +2,7 @@ import { Box, ThemeProvider } from "@mui/material";
 import Navigation from "./Navigation";
 import theme from "./styles/theme";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const queryClient = new QueryClient({
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <Box>
+      <Toaster position="top-center" />
       <ThemeProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
           <Navigation />

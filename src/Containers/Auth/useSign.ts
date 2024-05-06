@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { ErrorType } from "@root/utils/error-utils";
 
 export type UseSignType = ReturnType<typeof useSign>;
 
@@ -17,7 +19,7 @@ export const useSign = (authType: AuthType) => {
   const mutation = useMutation((post: AuthRequest) => {
     return axiosClient.post<AuthResponse>(loginRoute, post);
   });
-  const { data: result, isSuccess } = mutation;
+  const { data: result, isSuccess, isError, error, isLoading } = mutation;
   const onSubmit = (formValues: AuthRequest) => {
     mutation.mutate(formValues);
   };
@@ -28,12 +30,16 @@ export const useSign = (authType: AuthType) => {
       Cookies.set("uid", result.data.email);
       navigate(BLOG_ROUTES.user);
     }
-  }, [isSuccess, result, navigate]);
+    if (isError) {
+      const errorWithMessage = error as ErrorType;
+      toast.error(errorWithMessage?.response?.data?.error as string);
+    }
+  }, [isSuccess, result, navigate, isError, error]);
 
   return {
-    mutation,
     onSubmit,
     method,
+    isLoading,
   };
 };
 

@@ -15,13 +15,18 @@ type Props = {
 };
 
 const AuthContainer: React.FC<Props> = ({ authType }) => {
-  const { onSubmit, method } = useSign(authType);
+  const { onSubmit, method, isLoading } = useSign(authType);
   return (
     <Box sx={authMainContainer}>
       <Box sx={authImageContainer}>
         <Box sx={authImage} component="img" src={guitarBackground} />
         <Box sx={formParentContainer}>
-          <AuthForm authType={authType} onSubmit={onSubmit} method={method} />
+          <AuthForm
+            authType={authType}
+            onSubmit={onSubmit}
+            method={method}
+            isLoading={isLoading}
+          />
         </Box>
       </Box>
     </Box>
